@@ -24,4 +24,22 @@ abstract class DiscountsAction extends Action
         parent::__construct($logger);    
         $this->discountsRepository = $discountsRepository;    
     }
+
+    /**
+     * Function to validate the order request  
+    */
+    public function validateRequest($request) {
+        
+        if($request->{'customer-id'}) {
+            if($request->{'customer-id'} != "" && $request->items != 0 && count($request->items) > 0) {
+                $result = true;
+            } else {
+                $result = false;
+            }
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
 }

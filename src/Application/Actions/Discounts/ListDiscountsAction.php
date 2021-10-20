@@ -11,14 +11,27 @@ class ListDiscountsAction extends DiscountsAction
      * {@inheritdoc}
     */
     protected function action(): Response {        
-
-        $postData = $this->getFormData();     
-        $this->logger->info("Request Data");
-        $this->logger->info(json_encode($postData));   
-        $responseData = $this->selectDiscount($postData);  
-        $this->logger->info("Response Data");
-        $this->logger->info(json_encode($responseData));      
-        return $this->respondWithData($responseData);
+        //Fetch Request data
+        $postData = $this->getFormData();
+        //Validate Request data
+        $validateRequest = $this->validateRequest($postData);   
+        
+        //If valid request data
+        if($validateRequest) {            
+            $this->logger->info("Request Data");
+            $this->logger->info(json_encode($postData));   
+            $responseData = $this->selectDiscount($postData);  
+            $this->logger->info("Response Data");
+            $this->logger->info(json_encode($responseData));
+            return $this->respondWithData($responseData);
+        } else {
+            $responseData = array (                
+                "message" => "Invalid Request - customerid or order items is empty",                
+            );
+            return $this->respondWithData($responseData, 400);
+        }
+              
+        
     }
 
     /**

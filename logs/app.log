@@ -23,3 +23,21 @@
 [2021-10-20T09:06:43.019046+00:00] slim-app.INFO: Discount Type2 Applied [] {"uid":"36ca710"}
 [2021-10-20T09:06:43.020046+00:00] slim-app.INFO: Response Data [] {"uid":"36ca710"}
 [2021-10-20T09:06:43.020104+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":8,"unit-price":"4.99","total":"49.90","category":"2","discountType":"For every product of category Switches, when you buy five, you get a sixth for free.","discountQuantity":1}],"total":"1000.90","discountPrice":0,"discountType":"","payableAmount":1000.9} [] {"uid":"36ca710"}
+[2021-10-20T12:41:42.656048+00:00] slim-app.INFO: Request Data [] {"uid":"453f074"}
+[2021-10-20T12:41:42.660709+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":"7","unit-price":"4.99","total":"49.90"}],"total":"1000.90"} [] {"uid":"453f074"}
+[2021-10-20T12:41:42.660816+00:00] slim-app.INFO: Select discount based on order value [] {"uid":"453f074"}
+[2021-10-20T12:41:42.662943+00:00] slim-app.INFO: Discount Type2 Applied [] {"uid":"453f074"}
+[2021-10-20T12:41:42.663595+00:00] slim-app.INFO: Response Data [] {"uid":"453f074"}
+[2021-10-20T12:41:42.663700+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":8,"unit-price":"4.99","total":"49.90","category":"2","discountType":"For every product of category Switches, when you buy five, you get a sixth for free.","discountQuantity":1}],"total":"1000.90","discountPrice":0,"discountType":"","payableAmount":1000.9} [] {"uid":"453f074"}
+[2021-10-20T12:47:05.785130+00:00] slim-app.INFO: Request Data [] {"uid":"336ce89"}
+[2021-10-20T12:47:05.787925+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":"7","unit-price":"4.99","total":"49.90"}],"total":"1000.90"} [] {"uid":"336ce89"}
+[2021-10-20T12:47:05.788004+00:00] slim-app.INFO: Select discount based on order value [] {"uid":"336ce89"}
+[2021-10-20T12:47:05.789124+00:00] slim-app.INFO: Discount Type2 Applied [] {"uid":"336ce89"}
+[2021-10-20T12:47:05.789643+00:00] slim-app.INFO: Response Data [] {"uid":"336ce89"}
+[2021-10-20T12:47:05.789751+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":8,"unit-price":"4.99","total":"49.90","category":"2","discountType":"For every product of category Switches, when you buy five, you get a sixth for free.","discountQuantity":1}],"total":"1000.90","discountPrice":0,"discountType":"","payableAmount":1000.9} [] {"uid":"336ce89"}
+[2021-10-20T12:47:28.087750+00:00] slim-app.INFO: Request Data [] {"uid":"135ecb7"}
+[2021-10-20T12:47:28.090503+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":"7","unit-price":"4.99","total":"49.90"}],"total":"1000.90"} [] {"uid":"135ecb7"}
+[2021-10-20T12:47:28.090603+00:00] slim-app.INFO: Select discount based on order value [] {"uid":"135ecb7"}
+[2021-10-20T12:47:28.091530+00:00] slim-app.INFO: Discount Type2 Applied [] {"uid":"135ecb7"}
+[2021-10-20T12:47:28.092143+00:00] slim-app.INFO: Response Data [] {"uid":"135ecb7"}
+[2021-10-20T12:47:28.092269+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":8,"unit-price":"4.99","total":"49.90","category":"2","discountType":"For every product of category Switches, when you buy five, you get a sixth for free.","discountQuantity":1}],"total":"1000.90","discountPrice":0,"discountType":"","payableAmount":1000.9} [] {"uid":"135ecb7"}
