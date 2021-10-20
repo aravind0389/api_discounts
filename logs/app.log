@@ -1,0 +1,25 @@
+[2021-10-20T06:21:43.976879+00:00] slim-app.INFO: Request Data [] {"uid":"bdf363f"}
+[2021-10-20T06:21:43.980090+00:00] slim-app.INFO: {"id":"1","customer-id":"2","items":[{"product-id":"B102","quantity":"8","unit-price":"4.99","total":"49.90"},{"product-id":"A101","quantity":"4","unit-price":"4.99","total":"10.90"}],"total":"1000.90"} [] {"uid":"bdf363f"}
+[2021-10-20T06:21:43.980224+00:00] slim-app.INFO: Select discount based on order value [] {"uid":"bdf363f"}
+[2021-10-20T06:21:43.984073+00:00] slim-app.INFO: Discount Type2 Applied [] {"uid":"bdf363f"}
+[2021-10-20T06:21:43.984257+00:00] slim-app.INFO: Discount Type3 Applied [] {"uid":"bdf363f"}
+[2021-10-20T06:21:43.986555+00:00] slim-app.INFO: Discount Type1 Applied [] {"uid":"bdf363f"}
+[2021-10-20T06:21:43.988432+00:00] slim-app.INFO: Response Data [] {"uid":"bdf363f"}
+[2021-10-20T06:21:43.988584+00:00] slim-app.INFO: {"id":"1","customer-id":"2","items":[{"product-id":"A101","quantity":"4","unit-price":"4.99","total":8.72,"category":"1","discountPrice":"2.18","discountType":"If you buy two or more products of category Tools, you get a 20% discount on the cheapest product."},{"product-id":"B102","quantity":9,"unit-price":"4.99","total":"49.90","category":"2","discountType":"For every product of category Switches, when you buy five, you get a sixth for free.","discountQuantity":1}],"total":"1000.90","discountPrice":"99.87","discountType":"Bought for over \u20ac 1000, gets a discount of 10% on the whole order","payableAmount":898.85} [] {"uid":"bdf363f"}
+[2021-10-20T06:26:56.192267+00:00] slim-app.INFO: Request Data [] {"uid":"36ce447"}
+[2021-10-20T06:26:56.195834+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":"3","unit-price":"4.99","total":"49.90"}],"total":"1000.90"} [] {"uid":"36ce447"}
+[2021-10-20T06:26:56.195935+00:00] slim-app.INFO: Select discount based on order value [] {"uid":"36ce447"}
+[2021-10-20T06:26:56.200479+00:00] slim-app.INFO: Response Data [] {"uid":"36ce447"}
+[2021-10-20T06:26:56.200612+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":"3","unit-price":"4.99","total":"49.90","category":"2"}],"total":"1000.90","discountPrice":0,"discountType":"","payableAmount":1000.9} [] {"uid":"36ce447"}
+[2021-10-20T06:40:55.179959+00:00] slim-app.INFO: Request Data [] {"uid":"7a46b1f"}
+[2021-10-20T06:40:55.183773+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":"7","unit-price":"4.99","total":"49.90"}],"total":"1000.90"} [] {"uid":"7a46b1f"}
+[2021-10-20T06:40:55.183889+00:00] slim-app.INFO: Select discount based on order value [] {"uid":"7a46b1f"}
+[2021-10-20T06:40:55.186679+00:00] slim-app.INFO: Discount Type2 Applied [] {"uid":"7a46b1f"}
+[2021-10-20T06:40:55.188969+00:00] slim-app.INFO: Response Data [] {"uid":"7a46b1f"}
+[2021-10-20T06:40:55.189111+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":8,"unit-price":"4.99","total":"49.90","category":"2","discountType":"For every product of category Switches, when you buy five, you get a sixth for free.","discountQuantity":1}],"total":"1000.90","discountPrice":0,"discountType":"","payableAmount":1000.9} [] {"uid":"7a46b1f"}
+[2021-10-20T09:06:43.015831+00:00] slim-app.INFO: Request Data [] {"uid":"36ca710"}
+[2021-10-20T09:06:43.017397+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":"7","unit-price":"4.99","total":"49.90"}],"total":"1000.90"} [] {"uid":"36ca710"}
+[2021-10-20T09:06:43.017438+00:00] slim-app.INFO: Select discount based on order value [] {"uid":"36ca710"}
+[2021-10-20T09:06:43.019046+00:00] slim-app.INFO: Discount Type2 Applied [] {"uid":"36ca710"}
+[2021-10-20T09:06:43.020046+00:00] slim-app.INFO: Response Data [] {"uid":"36ca710"}
+[2021-10-20T09:06:43.020104+00:00] slim-app.INFO: {"id":"1","customer-id":"1","items":[{"product-id":"B102","quantity":8,"unit-price":"4.99","total":"49.90","category":"2","discountType":"For every product of category Switches, when you buy five, you get a sixth for free.","discountQuantity":1}],"total":"1000.90","discountPrice":0,"discountType":"","payableAmount":1000.9} [] {"uid":"36ca710"}
