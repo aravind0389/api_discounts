@@ -26,58 +26,44 @@ class ListDiscountsAction extends DiscountsAction
     */
     protected function selectDiscount($orderDetails) {
 
-        //Query for customer revenue to see if he has bought over 1000
-        // $customerId = $orderDetails->{'customer-id'};                 
-        // $customerDetail = $this->discountsRepository->findCustomerById($customerId);
-        // $customerRevenue = (count($customerDetail) > 0) ? $customerDetail[0]['revenue'] : 0;        
+        //Total order value        
         $orderValue = $orderDetails->total;
         $this->logger->info("Select discount based on order value");
-        //If customer bought over 1000 apply 10% discount
-        //if($customerRevenue >= 1000) {
-            /*$discountsDetail = $this->computeDiscounts(1, $orderValue, []);
-            $orderValue = $orderDetails->total;
-            $discountPrice = $discountsDetail["discountPrice"];
-            $discountType = $discountsDetail["discountType"];            
-            $responseData = $orderDetails;
-            $responseData->discountPrice = $discountPrice;
-            $responseData->discountType = $discountType; 
-            $responseData->payableAmount = $orderValue - $discountPrice;
-            return $responseData;*/
-        //} else {
-            //Query for product to get product categoryId
-            $productDetails = $this->assignProductCategoryId($orderDetails);
 
-            foreach($productDetails->items as $key => $values) {
-                
-                if($values->category == 2 && $values->quantity >= 5) {                    
-                    $discountsDetail = $this->computeDiscounts(2, $orderValue, $values);
-                    $values->discountType = $discountsDetail["discountType"];
-                    $values->discountQuantity = $discountsDetail["discountQuantity"];
-                    $values->quantity = $values->quantity +  $discountsDetail["discountQuantity"];
-                } else if($values->category == 1 && $values->quantity >= 2) {                   
-                    $discountsDetail = $this->computeDiscounts(3, $orderValue, $productDetails);    
-                    $orderDetails = $discountsDetail["productDetails"];
-                    $orderValue = $orderDetails->total - $discountsDetail["discountPrice"]; 
-                }
-            }
+        //Query for product to get product categoryId
+        $productDetails = $this->assignProductCategoryId($orderDetails);
+
+        foreach($productDetails->items as $key => $values) {
             
-            $discountPrice = 0;
-            $discountType = ""; 
-            $customerId = $orderDetails->{'customer-id'};                 
-            $customerDetail = $this->discountsRepository->findCustomerById($customerId);
-            $customerRevenue = (count($customerDetail) > 0) ? $customerDetail[0]['revenue'] : 0;   
-            if($customerRevenue >= 1000) {
-                $discountsDetail = $this->computeDiscounts(1, $orderValue, []);
-                $discountPrice = $discountsDetail["discountPrice"];
-                $discountType = $discountsDetail["discountType"]; 
+            if($values->category == 2 && $values->quantity >= 5) {                    
+                $discountsDetail = $this->computeDiscounts(2, $orderValue, $values);
+                $values->discountType = $discountsDetail["discountType"];
+                $values->discountQuantity = $discountsDetail["discountQuantity"];
+                $values->quantity = $values->quantity +  $discountsDetail["discountQuantity"];
+            } else if($values->category == 1 && $values->quantity >= 2) {                   
+                $discountsDetail = $this->computeDiscounts(3, $orderValue, $productDetails);    
+                $orderDetails = $discountsDetail["productDetails"];
+                $orderValue = $orderDetails->total - $discountsDetail["discountPrice"]; 
             }
-                       
-            $responseData = $orderDetails;
-            $responseData->discountPrice = $discountPrice;
-            $responseData->discountType = $discountType; 
-            $responseData->payableAmount = $orderValue - $discountPrice;            
-            return $responseData;
-        //}
+        }
+        
+        $discountPrice = 0;
+        $discountType = ""; 
+        $customerId = $orderDetails->{'customer-id'};                 
+        $customerDetail = $this->discountsRepository->findCustomerById($customerId);
+        $customerRevenue = (count($customerDetail) > 0) ? $customerDetail[0]['revenue'] : 0;   
+        if($customerRevenue >= 1000) {
+            $discountsDetail = $this->computeDiscounts(1, $orderValue, []);
+            $discountPrice = $discountsDetail["discountPrice"];
+            $discountType = $discountsDetail["discountType"]; 
+        }
+                    
+        $responseData = $orderDetails;
+        $responseData->discountPrice = $discountPrice;
+        $responseData->discountType = $discountType; 
+        $responseData->payableAmount = $orderValue - $discountPrice;            
+        return $responseData;
+        
     }
 
     /**
